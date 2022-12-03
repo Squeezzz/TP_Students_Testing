@@ -1,0 +1,7 @@
+C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\obj\Debug\net5.0\autorisation.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\obj\Debug\net5.0\autorisation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\obj\Debug\net5.0\autorisation.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\obj\Debug\net5.0\autorisation.AssemblyInfo.cs
+C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\obj\Debug\net5.0\autorisation.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\obj\Debug\net5.0\autorisation.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\obj\Debug\net5.0\autorisation.MvcApplicationPartsAssemblyInfo.cache
