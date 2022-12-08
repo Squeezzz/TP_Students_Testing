@@ -48,14 +48,7 @@ nav img {
 img {
     height: 30%;
     width: 20%;
-}
-
-h4 {
-    font-size: 22px;
-}
-
-h3 {
-    font-size: 30px;
+    border-color: black;
 }
 
 footer {
@@ -67,7 +60,26 @@ footer {
     padding: 2%;
 }
 
-#workingArea {height: 150%; width:50%; border-radius: 40px; padding: 1%; font-size: 5; margin-left: auto; margin-right: auto; margin-bottom: auto; background-color: rgb(148, 148, 182);}
-#pageName {border-radius: 40px ;text-align: center; background-color: rgba(80, 144, 228, 0.315)}
-#loginLogin {height: 100%; width:30%;font-size: 5; margin-left: auto; margin-right: auto; background-color: rgb(196, 196, 196);}
-#wrapper{min-height: 100%; display: flex; flex-direction: column;}
+#workingArea {
+    height: 150%;
+    width:90%;
+    border-radius: 40px;
+    padding: 1%;
+    font-size: 5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    background-color: rgb(148, 148, 182);
+}
+#pageName {border-radius: 40px;
+    text-align: center;
+    background-color: rgba(80, 144, 228, 0.315)
+}
+#wrapper{min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+td, tr{
+    border: 1px black solid;
+    align-content: center;
+}
