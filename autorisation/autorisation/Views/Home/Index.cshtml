@@ -1,0 +1,45 @@
+﻿@model IEnumerable<autorisation.Models.Список_пользователей>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ФИО)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Группа)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Логин)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пароль)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ФИО)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Группа)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Логин)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пароль)
+            </td>
+            <td>
+                @Html.ActionLink("Create", "Create", new { id = item.id }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+</table>
