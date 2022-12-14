@@ -7,7 +7,7 @@
 
 
 
-@using (Html.BeginForm("SAddOrEdit", "A_list_of_users", FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return autorisation(this);", data_restUrl = Url.Action("AddOrEdit", "A_list_of_users", new { id = 0 }) }))//data-resetUrl
+@using (Html.BeginForm("SAddOrEdit", "A_list_of_users", FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return autorisation(this);", data_restUrl = Url.Action("SAddOrEdit", "A_list_of_users", new { id = 0 }) }))//data-resetUrl
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -61,7 +61,7 @@
                         <input type="submit" value="Submit" class="btn btn-default" />
                         @if (Model.id != 0)
                         {
-                            <a class="btn btn-success" onclick="refreshAddNewTab('@Url.Action("AddOrEdit","A_list_of_users",new{id=0})',false)"><i class="fa fa-plus"></i> Add New</a>
+                            <a class="btn btn-success" onclick="refreshAddNewTab('@Url.Action("SAddOrEdit","A_list_of_users",new{id=0})',false)"><i class="fa fa-plus"></i> Add New</a>
                         }
                     </div>
                 </div>

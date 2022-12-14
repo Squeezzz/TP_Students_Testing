@@ -255,10 +255,18 @@
     <Content Include="Views\Home\SDelete.cshtml" />
     <Content Include="Views\Home\Sttudent.cshtml" />
     <Content Include="Views\Home\SAddOrEdit.cshtml" />
+    <Content Include="Views\Home\Prrepod.cshtml" />
+    <Content Include="Views\Home\Grroups.cshtml" />
+    <Content Include="Views\Home\PAddOrEdit.cshtml" />
+    <Content Include="Views\Home\GAddOrEdit.cshtml" />
+    <Content Include="Views\Home\PDelete.cshtml" />
+    <Content Include="Views\Home\GDelete.cshtml" />
+    <Content Include="Views\Prepod\Index.cshtml" />
+    <Content Include="Views\Prepod\Create_test.cshtml" />
+    <Content Include="Views\Prepod\Test_results.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Prepod\" />
     <Folder Include="Views\Student\" />
   </ItemGroup>
   <ItemGroup>
