@@ -4,14 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using autorisation.Models;
-using autorisation.DDAO;
+using autorisation.DAO;
 
 
 namespace autorisation.Controllers
 {
     public class HomeController : Controller
     {
-        RecordsDAO records = new RecordsDAO();
+        ASttudentDAO ASttudent = new ASttudentDAO();
+        APrrepodDAO AprrepodDAO = new APrrepodDAO();
+        AGrroupsDAO GrroupsDAO = new AGrroupsDAO();
+
+        // ПОПЫТКИ СДЕЛАТЬ АДМИНА
 
         // GET: Home/Create
         [Authorize(Roles = "Admin")]
@@ -28,17 +32,17 @@ namespace autorisation.Controllers
         // GET: Home/Details/5
         public ActionResult Details(int id)
         {
-            return View(records.GetСписок_пользователей(id));
+            return View(ASttudent.GetA_list_of_users(id));
         }
 
         // POST: Home/Create
         [HttpPost]
-        public ActionResult Create([Bind(Exclude = "id")] Список_пользователей record)
+        public ActionResult Create([Bind(Exclude = "id")] A_list_of_users record)
         {
             try
             {
                 // TODO: Add insert logic here
-                if (records.InsertСписок_пользователей(record))
+                if (ASttudent.InsertA_list_of_users(record))
                     return RedirectToAction("Index");
                 else
                     return View("Create");
@@ -53,14 +57,14 @@ namespace autorisation.Controllers
         // GET: Home/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(records.GetСписок_пользователей(id));
+            return View(ASttudent.GetA_list_of_users(id));
         }
 
         // POST: Home/Edit/5
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "ФИО, Группа, Логин, Пароль")] Список_пользователей met)
+        public ActionResult Edit([Bind(Include = "Full_name, Group, Login, Password, id, Role")] A_list_of_users met)
         {
-            if (ModelState.IsValid && records.EditСписок_пользователей(met))
+            if (ModelState.IsValid && ASttudent.EditA_list_of_users(met))
                 return RedirectToAction("Index");
             return View();
         }
@@ -68,14 +72,14 @@ namespace autorisation.Controllers
         // GET: Home/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(records.GetСписок_пользователей(id));
+            return View(ASttudent.GetA_list_of_users(id));
         }
 
         // POST: Home/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            if (ModelState.IsValid && records.DeleteСписок_пользователей(id))
+            if (ModelState.IsValid && ASttudent.DeleteA_list_of_users(id))
                 return RedirectToAction("Index");
             return View();
         }
@@ -93,5 +97,9 @@ namespace autorisation.Controllers
 
             return View();
         }
+
+        // ПОПЫТКИ СДЕЛАТЬ ПРЕПОДА
+
+        // ПОПЫТКИ СДЕЛАТЬ СТУДЕНТА
     }
 }

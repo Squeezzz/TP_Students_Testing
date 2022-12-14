@@ -1,45 +1,33 @@
-﻿@model IEnumerable<autorisation.Models.Список_пользователей>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ФИО)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Группа)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Логин)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Пароль)
-        </th>
-        <th></th>
-    </tr>
+﻿@{
+    ViewBag.Title = "Index";
+}
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ФИО)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Группа)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Логин)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Пароль)
-            </td>
-            <td>
-                @Html.ActionLink("Create", "Create", new { id = item.id }) |
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
-        </tr>
-    }
-</table>
+<ul class="nav nav-tabs">
+    <li><a data-toggle="tab" href="#firstTab">Список_преподавателей</a></li>
+    <li><a data-toggle="tab" href="#firstTab">Список_студентов</a></li>
+    <li><a data-toggle="tab" href="#firstTab">Группы</a></li>
+</ul>
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in">@Html.Action("APrrepod")</div>
+    <div id="firstTab" class="tab-pane fade in">@Html.Action("ASttudent")</div>
+        <div id="firstTab" class="tab-pane fade in">@Html.Action("AGrroups")</div>
+</div>
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#employeeTable").DataTable();
+        }
+
+        $(function () {
+            activatejQueryTable();
+        });
+
+    </script>
+}

@@ -174,19 +174,22 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="DDAO\DAO.cs" />
-    <Compile Include="DDAO\RecordsDAO.cs" />
+    <Compile Include="DAL\DTSContext.cs" />
+    <Compile Include="DAO\APrrepodDAO.cs" />
+    <Compile Include="DAO\DAO.cs" />
+    <Compile Include="DAO\ASttudentDAO.cs" />
+    <Compile Include="DAO\AGrroupsDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Группа.cs" />
-    <Compile Include="Models\Пройденный_тест.cs" />
-    <Compile Include="Models\Роли.cs" />
-    <Compile Include="Models\Список_пользователей.cs" />
-    <Compile Include="Models\Тест.cs" />
+    <Compile Include="Models\Groups.cs" />
+    <Compile Include="Models\Passed_Tests.cs" />
+    <Compile Include="Models\Roless.cs" />
+    <Compile Include="Models\A_list_of_users.cs" />
+    <Compile Include="Models\Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -214,6 +217,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Scripts.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -248,10 +252,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\SDelete.cshtml" />
+    <Content Include="Views\Home\Sttudent.cshtml" />
+    <Content Include="Views\Home\SAddOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Prepod\" />
+    <Folder Include="Views\Student\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
