@@ -12,5 +12,10 @@ namespace autorisation.Models
         public string Name { get; set; }
 
         public virtual ICollection<A_list_of_users> A_list_of_users { get; set; }
+
+        public static implicit operator Roless(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

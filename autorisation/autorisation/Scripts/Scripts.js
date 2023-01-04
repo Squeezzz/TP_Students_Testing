@@ -20,7 +20,7 @@ function ShowImagePreview(imageUploader, previewImage) {
     }
 }
 
-function jQueryAjaxPost(form) {
+function autorisationPost(form) {
     $.validator.unobtrusive.parse(form);
     if ($(form).valid()) {
         var ajaxConfig = {
@@ -32,8 +32,8 @@ function jQueryAjaxPost(form) {
                     $("#firstTab").html(response.html);
                     refreshAddNewTab($(form).attr('data-restUrl'), true);
                     $.notify(response.message, "success");
-                    if (typeof activatejQueryTable !== 'undefined' && $.isFunction(activatejQueryTable))
-                        activatejQueryTable();
+                    if (typeof activateautorisarionTable !== 'undefined' && $.isFunction(activateautorisationTable))
+                        activateautorisationTable();
                 }
                 else {
                     $.notify(response.message, "error");
@@ -86,8 +86,8 @@ function Delete(url) {
                 if (response.success) {
                     $("#firstTab").html(response.html);
                     $.notify(response.message, "warn");
-                    if (typeof activatejQueryTable !== 'undefined' && $.isFunction(activatejQueryTable))
-                        activatejQueryTable();
+                    if (typeof activateautorisationTable !== 'undefined' && $.isFunction(activateautorisationTable))
+                        activateautorisationTable();
                 }
                 else {
                     $.notify(response.message, "error");

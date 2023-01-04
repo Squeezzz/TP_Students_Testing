@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using autorisation.Models;
+using autorisation.DAL;
 
 namespace autorisation.Controllers
 {
@@ -17,6 +18,11 @@ namespace autorisation.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly DTSContext _context;
+        public AccountController(DTSContext context)
+        {
+            _context = context;
+        }
 
         public AccountController()
         {

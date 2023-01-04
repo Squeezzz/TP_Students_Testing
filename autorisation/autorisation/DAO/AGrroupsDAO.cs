@@ -19,8 +19,8 @@ namespace autorisation.DAO
             try
             {
 
-                Debug.WriteLine("INSERT INTO [Distantion_Test_Students] (Name, Well) VALUES (N'" + Name + "', '" + Well + "')");
-                new SqlCommand("INSERT INTO [Distantion_Test_Students] (Name, Well) VALUES (N'" + Name + "', '" + Well + "')", Connection)
+                Debug.WriteLine("INSERT INTO [DTS] (Name, Well) VALUES (N'" + Name + "', '" + Well + "')");
+                new SqlCommand("INSERT INTO [DTS] (Name, Well) VALUES (N'" + Name + "', '" + Well + "')", Connection)
                 .ExecuteNonQuery();
                 return true;
             }
@@ -39,7 +39,7 @@ namespace autorisation.DAO
             return InsertGroups(t.Name, t.Well);
         }
 
-        public List<Groups> GetGroups(string table = "Distantion_Test_Students")
+        public List<Groups> GetGroups(string table = "DTS")
         {
 
             Connect();
@@ -61,7 +61,7 @@ namespace autorisation.DAO
 
             Groups ticket = new Groups();
 
-            using (var reader = new SqlCommand("SELECT * FROM [Distantion_Test_Students] WHERE Name = " + Name, Connection).ExecuteReader())
+            using (var reader = new SqlCommand("SELECT * FROM [DTS] WHERE Name = " + Name, Connection).ExecuteReader())
             {
                 while (reader.Read())
                     ticket = (new Groups() { Well = (int)reader["Well"], Name = (string)reader["Name"] });
@@ -77,7 +77,7 @@ namespace autorisation.DAO
 
             try
             {
-                new SqlCommand("DELETE FROM [Distantion_Test_Students] WHERE Name = " + Name, Connection).ExecuteNonQuery();
+                new SqlCommand("DELETE FROM [DTS] WHERE Name = " + Name, Connection).ExecuteNonQuery();
 
                 return true;
             }
@@ -97,7 +97,7 @@ namespace autorisation.DAO
 
             try
             {
-                (new SqlCommand("UPDATE [Distantion_Test_Students] SET Well = '" + met.Well + "' WHERE Name = " + met.Name, Connection)).ExecuteNonQuery();
+                (new SqlCommand("UPDATE [DTS] SET Well = '" + met.Well + "' WHERE Name = " + met.Name, Connection)).ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)

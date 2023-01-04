@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Index";
 }
 
@@ -6,11 +7,37 @@
     <li><a data-toggle="tab" href="#firstTab">Список_преподавателей</a></li>
     <li><a data-toggle="tab" href="#firstTab">Список_студентов</a></li>
     <li><a data-toggle="tab" href="#firstTab">Группы</a></li>
+    @*<li class="active"><a data-toggle="tab" href="#secondTab">Add New</a></li>*@
 </ul>
+
+@*<li class="nav-item">
+    <a class="nav-link text-dark" asp-area="" asp-controller="HomeController" asp-action="Prrepod">Prrepod</a>
+</li>*@
+
+@*<div class="tab-content">
+    
+    <div id="firstTab" class="tab-pane fade in"> <a class="nav-link text-dark" asp-area="" asp-controller="HomeController" asp-action="Prrepod">Prrepod</a>("Prrepod")</div>
+    <div id="firstTab" class="tab-pane fade in"> <a class="nav-link text-dark" asp-area="" asp-controller="HomeController" asp-action="Sttudent">Sttudent</a>("Sttudent")</div>
+    <div id="firstTab" class="tab-pane fade in"> <a class="nav-link text-dark" asp-area="" asp-controller="HomeController" asp-action="Grroups">Grroups</a>("Grroups")</div>
+</div>*@
+
+@*<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in">@Html.ActionLink("Prrepod", "Prrepod")</div>
+    <div id="firstTab" class="tab-pane fade in">@Html.ActionLink("Sttudent", "Sttudent")</div>
+    <div id="firstTab" class="tab-pane fade in">@Html.ActionLink("Grroups", "Grroups")</div>
+</div>*@
+
 <div class="tab-content">
-    <div id="firstTab" class="tab-pane fade in">@Html.Action("Prrepod")</div>
+
+    @*<div id="firstTab" class="tab-pane fade in">@Html.Action("Prrepod")</div>
     <div id="firstTab" class="tab-pane fade in">@Html.Action("Sttudent")</div>
     <div id="firstTab" class="tab-pane fade in">@Html.Action("Grroups")</div>
+    <div id="secondTab" class="tab-pane fade in active">@Html.Action("AddOrEdit")</div>*@
+
+    @*<div id="secondTab" class="tab-pane fade in active"> @Html.Action("Prrepod")</div>*@
+    @*<a id="firstTab" asp-area="" asp-controller="HomeController" asp-action="Prrepod" class="tab-pane fade in">Prrepod</a>*@
+    <div id="firstTab" class="tab-pane fade in"> <a class="nav-link text-dark" asp-area="" asp-controller="HomeController" asp-action="Sttudent">Sttudent</a></div>
+    <div id="firstTab" class="tab-pane fade in"> <a class="nav-link text-dark" asp-area="" asp-controller="HomeController" asp-action="Grroups">Grroups</a></div>
 </div>
 
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -21,12 +48,12 @@
 
 
     <script>
-        function activatejQueryTable() {
-            $("#employeeTable").DataTable();
+        function activateautorisationTable() {
+            $("#autorisationTable").DataTable();
         }
 
         $(function () {
-            activatejQueryTable();
+            activateautorisationTable();
         });
 
     </script>

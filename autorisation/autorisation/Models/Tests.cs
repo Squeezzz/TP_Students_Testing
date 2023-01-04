@@ -12,9 +12,10 @@ namespace autorisation.Models
         public string Name { get; set; }
 
         public int Teacher { get; set; }
-        public virtual Roless Roless { get; set; }
 
         public virtual Groups Group { get; set; }
+
+        public virtual Subject Subjects { get; set; }
 
         public DateTime The_date_of_the_beginning { get; set; }
         public DateTime End_date { get; set; }

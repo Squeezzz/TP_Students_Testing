@@ -129,3 +129,7 @@ C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курс�
 C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\autorisation\obj\Debug\autorisation.csproj.CoreCompileInputs.cache
 C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\autorisation\obj\Debug\autorisation.dll
 C:\Users\HP\Desktop\ВлГУ\ПРИ-220\ПЯТЫЙ СЕМЕСТР\ТП\курсач\репозиторий\autorisation\autorisation\obj\Debug\autorisation.pdb
+E:\autorisation\autorisation\obj\Debug\autorisation.csproj.AssemblyReference.cache
+E:\autorisation\autorisation\obj\Debug\autorisation.csproj.CoreCompileInputs.cache
+E:\autorisation\autorisation\obj\Debug\autorisation.dll
+E:\autorisation\autorisation\obj\Debug\autorisation.pdb

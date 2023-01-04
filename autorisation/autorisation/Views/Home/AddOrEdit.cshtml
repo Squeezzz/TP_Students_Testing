@@ -1,0 +1,66 @@
+﻿@model autorisation.Models.A_list_of_users
+
+@{
+    ViewBag.Title = "AddOrEdit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm("AddOrEdit", "A_list_of_users", FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return autorisationPost(this);", data_restUrl = Url.Action("AddOrEdit", "A_list_of_users", new { id = 0 }) }))//data-resetUrl
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Full_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Full_name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Full_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Subjects, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Subjects, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Subjects, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                    @if (Model.id != 0)
+                    {
+                        <a class="btn btn-success" onclick="refreshAddNewTab('@Url.Action("A_list_of_users","A_list_of_users",new{id=0})',false)"><i class="fa fa-plus"></i> Add New</a>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "Prrepod")
+    </div>
+}

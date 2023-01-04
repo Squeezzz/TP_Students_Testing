@@ -1,4 +1,4 @@
-﻿@model autorisation.Models.A_list_of_users
+﻿@*@model autorisation.Models.A_list_of_users
 
 @{
     ViewBag.Title = "PDelete";
@@ -36,11 +36,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Role)
+            @Html.DisplayNameFor(model => model.Subjects)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Role)
+            @Html.DisplayFor(model => model.Subjects)
         </dd>
     </dl>
 
@@ -49,8 +49,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back", "Index")
+            <input type="submit" value="PDelete" class="btn btn-default" /> |
+            @Html.ActionLink("Back", "Prrepod")
         </div>
     }
-</div>
+</div>*@

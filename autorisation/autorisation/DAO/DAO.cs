@@ -8,7 +8,7 @@ namespace autorisation.DAO
 {
     public class DAO
     {
-        const string ConnectionString = @"Data Source=LOCALHOST\SQLEXPRESS; Initial Catalog=Distantion_Test_Students; Integrated Security=True";
+        const string ConnectionString = @"Data Source=LOCALHOST\SQLEXPRESS; Initial Catalog=DTS; Integrated Security=True";
         public SqlConnection Connection { get; set; }
         public void Connect()
         {

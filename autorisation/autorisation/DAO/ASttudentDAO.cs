@@ -20,8 +20,8 @@ namespace autorisation.DAO
             try
             {
 
-                Debug.WriteLine("INSERT INTO [Distantion_Test_Students] (Full_name, Group, Login, Password, id, Role) VALUES (N'" + Full_name + "', '" + Group + "', N'" + Login + "', '" + Password + "', N'" + id + "', '" + Role + "')");
-                new SqlCommand("INSERT INTO [Distantion_Test_Students] (Full_name, Group, Login, Password, id, Role) VALUES (N'" + Full_name + "', '" + Group + "', N'" + Login + "', '" + Password + "', N'" + id + "', '" + Role + "')", Connection)
+                Debug.WriteLine("INSERT INTO [DTS] (Full_name, Group, Login, Password, id, Role) VALUES (N'" + Full_name + "', '" + Group + "', N'" + Login + "', '" + Password + "', N'" + id + "', '" + Role + "')");
+                new SqlCommand("INSERT INTO [DTS] (Full_name, Group, Login, Password, id, Role) VALUES (N'" + Full_name + "', '" + Group + "', N'" + Login + "', '" + Password + "', N'" + id + "', '" + Role + "')", Connection)
                 .ExecuteNonQuery();
                 return true;
             }
@@ -40,7 +40,7 @@ namespace autorisation.DAO
             return InsertA_list_of_users(t.Full_name, t.Group, t.Login, t.Password, t.id, t.Role);
         }
 
-        public List<A_list_of_users> GetA_list_of_users(string table = "Distantion_Test_Students")
+        public List<A_list_of_users> GetA_list_of_users(string table = "DTS")
         {
 
             Connect();
@@ -62,7 +62,7 @@ namespace autorisation.DAO
 
             A_list_of_users ticket = new A_list_of_users();
 
-            using (var reader = new SqlCommand("SELECT * FROM [Distantion_Test_Students] WHERE id = " + id, Connection).ExecuteReader())
+            using (var reader = new SqlCommand("SELECT * FROM [DTS] WHERE id = " + id, Connection).ExecuteReader())
             {
                 while (reader.Read())
                     ticket = (new A_list_of_users() { id = (int)reader["id"], Role = (int)reader["Role"], Full_name = (string)reader["Full_name"], Group = (string)reader["Group"], Login = (string)reader["Login"], Password = (string)reader["Password"] });
@@ -78,7 +78,7 @@ namespace autorisation.DAO
 
             try
             {
-                new SqlCommand("DELETE FROM [Distantion_Test_Students] WHERE id = " + id, Connection).ExecuteNonQuery();
+                new SqlCommand("DELETE FROM [DTS] WHERE id = " + id, Connection).ExecuteNonQuery();
 
                 return true;
             }
@@ -98,7 +98,7 @@ namespace autorisation.DAO
 
             try
             {
-                (new SqlCommand("UPDATE [Distantion_Test_Students] SET Full_name = '" + met.Full_name + "', Role = '" + met.Role + "', Group = '" + met.Group + "', Login = '" + met.Login + "'" + ", Password = '" + met.Password + "' WHERE id = " + met.id, Connection)).ExecuteNonQuery();
+                (new SqlCommand("UPDATE [DTS] SET Full_name = '" + met.Full_name + "', Role = '" + met.Role + "', Group = '" + met.Group + "', Login = '" + met.Login + "'" + ", Password = '" + met.Password + "' WHERE id = " + met.id, Connection)).ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)

@@ -5,12 +5,14 @@ using System.Web;
 using autorisation.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace autorisation.DAL
 {
     public class DTSContext : DbContext
     {
-        public DTSContext() : base("Distantion_Test_Students")
+        public DTSContext() : base("DTSContext")
         {
         }
 
@@ -19,6 +21,7 @@ namespace autorisation.DAL
         public DbSet<Passed_Tests> Passed_Tests { get; set; }
         public DbSet<Roless> Roless { get; set; }
         public DbSet<Tests> Tests { get; set; }
+        public DbSet<Subject> Subject { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
