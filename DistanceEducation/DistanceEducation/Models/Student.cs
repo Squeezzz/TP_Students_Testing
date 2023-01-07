@@ -14,7 +14,9 @@ namespace DistanceEducation.Models
         [Remote(action: "CheckEmail", controller: "Home", ErrorMessage = "Этот Email уже занят")]
         public string Email { get; set; }
         public string Password { get; set; }
-
+        
+        
+        //Группа студента
         public int GroupId { get; set; }
         public Group group { get; set; }
 

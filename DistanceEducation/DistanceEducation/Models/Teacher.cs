@@ -15,7 +15,7 @@ namespace DistanceEducation.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
-
+        //вторичный ключ дисциплины
         public int DisciplineId { get; set; }
         public Discipline discipline { get; set; }
     }
