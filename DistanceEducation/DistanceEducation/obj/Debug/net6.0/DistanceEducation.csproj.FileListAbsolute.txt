@@ -1,0 +1,8 @@
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.csproj.AssemblyReference.cache
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.AssemblyInfoInputs.cache
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.AssemblyInfo.cs
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.csproj.CoreCompileInputs.cache
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.RazorAssemblyInfo.cache
+C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation\obj\Debug\net6.0\DistanceEducation.RazorAssemblyInfo.cs
