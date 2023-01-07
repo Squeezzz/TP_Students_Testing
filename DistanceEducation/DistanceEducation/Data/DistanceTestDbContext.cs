@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace DistanceEducation.Data
 {
-    public class DistanceTestDbContext :DbContext
+    public class DistanceTestDbContext : DbContext
     {
         public DistanceTestDbContext(DbContextOptions<DistanceTestDbContext> options) : base(options)
         { }
@@ -18,6 +18,8 @@ namespace DistanceEducation.Data
         public DbSet<Result> results { get; set; }
         public DbSet<Test> tests { get; set; }
         public DbSet<GroupTeacher> groupTeachers { get; set; }
+        public DbSet<DisciplineGroup> disciplineGroups { get; set; }
+        public DbSet<DisciplineTeacher> disciplineTeachers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Group>()
@@ -34,11 +36,33 @@ namespace DistanceEducation.Data
                     .HasForeignKey(pt => pt.GroupsId)
                     );
 
-/*            modelBuilder
-                .Entity<Teacher>()
-                .HasMany(t => t.Groups)
-                .WithMany(t => t.Teachers)
-                .UsingEntity(j => j.ToTable("GroupTeacher"));*/
+            modelBuilder.Entity<Discipline>()
+                .HasMany(p => p.Teachers)
+                .WithMany(p => p.Disciplines)
+                .UsingEntity<DisciplineTeacher>(
+                j => j
+                        .HasOne(pt => pt.teacher)
+                        .WithMany(t => t.disciplineTeachers)
+                        .HasForeignKey(pt => pt.TeacherId),
+                j => j
+                    .HasOne(pt => pt.discipline)
+                    .WithMany(p => p.disciplineTeachers)
+                    .HasForeignKey(pt => pt.DisciplineId)
+        );
+
+            modelBuilder.Entity<Discipline>()
+                    .HasMany(p => p.Groups)
+                    .WithMany(p => p.Disciplines)
+                    .UsingEntity<DisciplineGroup>(
+            j => j
+                    .HasOne(pt => pt.group)
+                    .WithMany(t => t.disciplineGroups)
+                    .HasForeignKey(pt => pt.GroupsId),
+            j => j
+                    .HasOne(pt => pt.discipline)
+                    .WithMany(p => p.disciplineGroups)
+                    .HasForeignKey(pt => pt.DisciplineId)
+        );
         }
 
     }

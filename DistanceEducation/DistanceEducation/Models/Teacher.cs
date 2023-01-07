@@ -21,5 +21,6 @@ namespace DistanceEducation.Models
         public ICollection<Group> Groups { get; set; }
 
         public List<GroupTeacher> groupTeachers { get; set; }
+        public List<DisciplineTeacher> disciplineTeachers { get; set; }
     }
 }

@@ -10,5 +10,7 @@
         public ICollection<Teacher> Teachers { get; set; }
 
         public List<GroupTeacher> groupTeachers { get; set; }
+
+        public List<DisciplineGroup> disciplineGroups { get; set; }
     }
 }
