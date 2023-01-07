@@ -11,6 +11,6 @@
         public Group group { get; set; }
 
         public int TeacherId { get; set; }
-        public Teacher teacher { get; set;}
+        public Teacher teacher { get; set; }
     }
 }

@@ -5,8 +5,8 @@
         public int Id { get; set; }
         public string GroupName { get; set; }
 
-        //Вторичный ключ предметов группы
-        public int DisciplineId { get; set; }
-        public Discipline discipline { get; set; }
+        
+        public ICollection<Discipline> Disciplines { get; set; }
+        public ICollection<Teacher> Teachers { get; set; }
     }
 }
