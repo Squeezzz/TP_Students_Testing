@@ -1,0 +1,30 @@
+﻿@model DistanceEducation.Models.Test;
+
+@{
+    //List<Group> groups = ViewData["Group"] != null ? (List<Group>)ViewData["Group"] : null;
+    List<String> groups = ViewData["Group"] != null ? (List<String>)ViewData["Group"] : null;
+}
+
+<div>
+    <form asp-action="">
+        <label asp-for="TestName">Имя теста</label>
+        <input asp-for="TestName" />
+
+        <label asp-for="DateOfStart">Дата начала</label>
+        <input asp-for="DateOfStart" type="datetime" />
+
+        <label asp-for="DateOfEnd">Дата окончания</label>
+        <input asp-for="DateOfEnd" type="datetime" />
+
+        <label asp-for="GroupId">Выберите группу</label>
+        <select>
+            <option value="">Выберите группу</option>
+            @foreach (var item in groups)
+            {
+                <option value="dog">@item</option>
+            }
+        </select>
+
+        <button type="submit">Далее</button>
+    </form>
+</div>
