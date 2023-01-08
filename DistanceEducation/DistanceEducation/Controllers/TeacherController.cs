@@ -3,6 +3,8 @@ using DistanceEducation.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
+using System;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DistanceEducation.Controllers
 {
@@ -42,12 +44,6 @@ namespace DistanceEducation.Controllers
             //изменить на куки
             test.TeacherId = 1;
 
-            //ViewData["Test"] = test.GroupId;
-
-            //TempData["Test"] = test;
-            /*ViewData["Disciplines"] = _context.disciplines
-                .Where(a => a.Id == _context.disciplineTeachers.Where(a=>a.TeacherId==test.TeacherId).Select());*/
-
             List<int> disciplineTId = new List<int>();
             disciplineTId = _context.disciplineTeachers.Where(a=>a.TeacherId==test.TeacherId).Select(a=>a.DisciplineId).ToList();
 
@@ -67,6 +63,33 @@ namespace DistanceEducation.Controllers
 
             ViewData["Discipline"] = disciplines;
 
+            
+            TempData["TestName"] = test.TestName;
+            TempData["DateOfStart"] = test.DateOfStart;
+            TempData["DateOfEnd"] = test.DateOfEnd;
+            TempData["GroupId"] = test.GroupId;
+
+            return View();
+        }
+
+        public async Task<IActionResult> CreateTest([Bind("DisciplineId")] Test test)
+        {
+            //создание теста, редирект на страницу для редактирования тестов
+            test.TestName = TempData["TestName"].ToString();
+
+            test.DateOfStart = Convert.ToDateTime(TempData["DateOfStart"]);
+            test.DateOfEnd = Convert.ToDateTime(TempData["DateOfEnd"]);
+            test.GroupId =Convert.ToInt32(TempData["GroupId"]);
+            //изменить на куки
+            test.TeacherId = 1;
+            _context.tests.Add(test);
+            await _context.SaveChangesAsync();
+
+            return Redirect("~/Teacher/MakeQuestions");
+        }
+
+        public IActionResult MakeQuestions()
+        {
             return View();
         }
 

@@ -7,9 +7,9 @@
 
 
 <div>
-    <form asp-action="ChooseDiscipline">
+    <form asp-action="CreateTest">
 
-        <label asp-for="DisciplineId">Выберите группу</label>
+        <label asp-for="DisciplineId">Выберите предмет</label>
         <select asp-for="DisciplineId">
             <option value="">Выберите предмет</option>
             @foreach (var item in disciplines)
