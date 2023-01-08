@@ -202,7 +202,7 @@ namespace DistanceEducation.Controllers
             && a.DisciplineId == Convert.ToInt32(Request.Cookies["DisciplineId"])
             && a.GroupId == Convert.ToInt32(Request.Cookies["GroupId"]))
                 .Select(a=>a.Id).FirstOrDefault();
-
+            Response.Cookies.Append("TestId", question.TestId.ToString());
             if (Request.Cookies["Answer1"] != null)
             {
                 question.Answer1 = Request.Cookies["Answer1"];
@@ -247,7 +247,15 @@ namespace DistanceEducation.Controllers
             _context.questions.Add(question);
             await _context.SaveChangesAsync();
 
-            return Redirect("~/Teacher/MakeQuestions");
+            return Redirect("~/Teacher/ListQuestions");
         }
+
+        public IActionResult ListQuestions()
+        {
+            ViewData["Test"] = _context.tests.Where(a => a.Id == Convert.ToInt32(Request.Cookies["TestId"])).ToList();
+            ViewData["Question"] = _context.questions.Where(a => a.TestId == Convert.ToInt32(Request.Cookies["TestId"])).ToList();
+            return View();
+        }
+
     }
 }
