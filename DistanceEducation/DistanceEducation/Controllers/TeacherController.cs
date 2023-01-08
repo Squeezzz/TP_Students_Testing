@@ -77,6 +77,8 @@ namespace DistanceEducation.Controllers
             //создание теста, редирект на страницу для редактирования тестов
             test.TestName = Request.Cookies["TestName"];
 
+            Response.Cookies.Append("DisciplineId", test.DisciplineId.ToString());
+
             test.DateOfStart = Convert.ToDateTime(Request.Cookies["DateOfStart"]);
             test.DateOfEnd = Convert.ToDateTime(Request.Cookies["DateOfEnd"]);
             test.GroupId =Convert.ToInt32(Request.Cookies["GroupId"]);
@@ -188,12 +190,18 @@ namespace DistanceEducation.Controllers
 
         public async Task<IActionResult> CreateQuestion([Bind("RightAnswer")] Question question)
         {
+            //Request.Form["id"] = question.Id;
+            question.RightAnswer = Request.Form["answer"];
             question.Title = Request.Cookies["Title"];
             question.typeQuestion =Convert.ToInt32( Request.Cookies["typeQuestion"]);
 
             question.TestId = _context.tests.Where(a => a.TestName == Request.Cookies["TestName"]
             && a.DateOfStart == Convert.ToDateTime(Request.Cookies["DateOfStart"])
-            ).Sele
+            && a.DateOfEnd == Convert.ToDateTime(Request.Cookies["DateOfEnd"])
+            && a.TeacherId == 1
+            && a.DisciplineId == Convert.ToInt32(Request.Cookies["DisciplineId"])
+            && a.GroupId == Convert.ToInt32(Request.Cookies["GroupId"]))
+                .Select(a=>a.Id).FirstOrDefault();
 
             if (Request.Cookies["Answer1"] != null)
             {
