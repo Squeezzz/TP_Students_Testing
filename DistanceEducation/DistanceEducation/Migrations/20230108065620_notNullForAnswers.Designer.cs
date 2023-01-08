@@ -4,6 +4,7 @@ using DistanceEducation.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DistanceEducation.Migrations
 {
     [DbContext(typeof(DistanceTestDbContext))]
-    partial class DistanceTestDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230108065620_notNullForAnswers")]
+    partial class notNullForAnswers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
