@@ -106,7 +106,59 @@ namespace DistanceEducation.Controllers
 
         public IActionResult ChooseRightAnswer([Bind("Answer1,Answer2,Answer3,Answer4,Answer5,Answer6,Answer7,Answer8,Answer9,Answer10")] Question question)
         {
-            Response.Cookies.Append("Answer1", question.Answer1);
+            //string answer = "Answer";
+
+            if(question.Answer1!=null)
+            {
+                Response.Cookies.Append("Answer1", question.Answer1);
+                ViewData["Answer1"] = question.Answer1;
+            } 
+            if (question.Answer2 != null)
+            {
+                Response.Cookies.Append("Answer2", question.Answer2);
+                ViewData["Answer2"] = question.Answer2;
+            }
+            if (question.Answer3 != null)
+            {
+                Response.Cookies.Append("Answer3", question.Answer3);
+                ViewData["Answer3"] = question.Answer3;
+            }
+            if (question.Answer4 != null)
+            {
+                Response.Cookies.Append("Answer4", question.Answer4);
+                ViewData["Answer4"] = question.Answer4;
+            }
+            if (question.Answer5 != null)
+            {
+                Response.Cookies.Append("Answer5", question.Answer5);
+                ViewData["Answer5"] = question.Answer5;
+            }
+            if (question.Answer6 != null)
+            {
+                Response.Cookies.Append("Answer6", question.Answer6);
+                ViewData["Answer6"] = question.Answer6;
+            }
+            if (question.Answer7 != null)
+            {
+                Response.Cookies.Append("Answer7", question.Answer7);
+                ViewData["Answer7"] = question.Answer7;
+            }
+            if (question.Answer8 != null)
+            {
+                Response.Cookies.Append("Answer8", question.Answer8);
+                ViewData["Answer8"] = question.Answer8;
+            }
+            if (question.Answer9 != null)
+            {
+                Response.Cookies.Append("Answer9", question.Answer9);
+                ViewData["Answer9"] = question.Answer9;
+            }
+            if (question.Answer10 != null)
+            {
+                Response.Cookies.Append("Answer10", question.Answer10);
+                ViewData["Answer10"] = question.Answer10;
+            }
+            /*Response.Cookies.Append("Answer1", question.Answer1);
             Response.Cookies.Append("Answer2", question.Answer2);
             Response.Cookies.Append("Answer3", question.Answer3);
             Response.Cookies.Append("Answer4", question.Answer4);
@@ -115,7 +167,7 @@ namespace DistanceEducation.Controllers
             Response.Cookies.Append("Answer7", question.Answer7);
             Response.Cookies.Append("Answer8", question.Answer8);
             Response.Cookies.Append("Answer9", question.Answer9);
-            Response.Cookies.Append("Answer10", question.Answer10);
+            Response.Cookies.Append("Answer10", question.Answer10);*/
 
             ViewData["typeQuestion"] = Request.Cookies["typeQuestion"];
 
