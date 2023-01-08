@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DistanceEducation.Controllers
 {
@@ -63,11 +64,10 @@ namespace DistanceEducation.Controllers
 
             ViewData["Discipline"] = disciplines;
 
-            
-            TempData["TestName"] = test.TestName;
-            TempData["DateOfStart"] = test.DateOfStart;
-            TempData["DateOfEnd"] = test.DateOfEnd;
-            TempData["GroupId"] = test.GroupId;
+            Response.Cookies.Append("TestName", test.TestName);
+            Response.Cookies.Append("DateOfStart",test.DateOfStart.ToString());
+            Response.Cookies.Append("DateOfEnd", test.DateOfEnd.ToString());
+            Response.Cookies.Append("GroupId", test.GroupId.ToString() );
 
             return View();
         }
@@ -75,23 +75,63 @@ namespace DistanceEducation.Controllers
         public async Task<IActionResult> CreateTest([Bind("DisciplineId")] Test test)
         {
             //создание теста, редирект на страницу для редактирования тестов
-            test.TestName = TempData["TestName"].ToString();
+            test.TestName = Request.Cookies["TestName"];
 
-            test.DateOfStart = Convert.ToDateTime(TempData["DateOfStart"]);
-            test.DateOfEnd = Convert.ToDateTime(TempData["DateOfEnd"]);
-            test.GroupId =Convert.ToInt32(TempData["GroupId"]);
+            test.DateOfStart = Convert.ToDateTime(Request.Cookies["DateOfStart"]);
+            test.DateOfEnd = Convert.ToDateTime(Request.Cookies["DateOfEnd"]);
+            test.GroupId =Convert.ToInt32(Request.Cookies["GroupId"]);
             //изменить на куки
             test.TeacherId = 1;
             _context.tests.Add(test);
             await _context.SaveChangesAsync();
-
+            
             return Redirect("~/Teacher/MakeQuestions");
         }
 
         public IActionResult MakeQuestions()
         {
+            
             return View();
         }
 
+        public IActionResult WriteAnswers([Bind("Title,typeQuestion")] Question question)
+        {
+            Response.Cookies.Append("Title", question.Title);
+            Response.Cookies.Append("typeQuestion", question.typeQuestion.ToString());
+
+            ViewData["typeQuestion"] = Request.Cookies["typeQuestion"];
+
+            return View();
+        }
+
+        public IActionResult ChooseRightAnswer([Bind("Answer1,Answer2,Answer3,Answer4,Answer5,Answer6,Answer7,Answer8,Answer9,Answer10")] Question question)
+        {
+            Response.Cookies.Append("Answer1", question.Answer1);
+            Response.Cookies.Append("Answer2", question.Answer2);
+            Response.Cookies.Append("Answer3", question.Answer3);
+            Response.Cookies.Append("Answer4", question.Answer4);
+            Response.Cookies.Append("Answer5", question.Answer5);
+            Response.Cookies.Append("Answer6", question.Answer6);
+            Response.Cookies.Append("Answer7", question.Answer7);
+            Response.Cookies.Append("Answer8", question.Answer8);
+            Response.Cookies.Append("Answer9", question.Answer9);
+            Response.Cookies.Append("Answer10", question.Answer10);
+
+            ViewData["typeQuestion"] = Request.Cookies["typeQuestion"];
+
+
+            ViewData["Answer1"] = question.Answer1;
+            ViewData["Answer2"] = question.Answer2;
+            ViewData["Answer3"] = question.Answer3;
+            ViewData["Answer4"] = question.Answer4;
+            ViewData["Answer5"] = question.Answer5;
+            ViewData["Answer6"] = question.Answer6;
+            ViewData["Answer7"] = question.Answer7;
+            ViewData["Answer8"] = question.Answer8;
+            ViewData["Answer9"] = question.Answer9;
+            ViewData["Answer10"] = question.Answer10;
+
+            return View();
+        }
     }
 }

@@ -1,0 +1,34 @@
+﻿@model DistanceEducation.Models.Question;
+
+@{
+    int typeQuestion = Convert.ToInt32(ViewData["typeQuestion"]);
+    string answer1 = ViewData["Answer1"].ToString();
+    string answer2 = ViewData["Answer2"].ToString();
+    string answer3 = ViewData["Answer3"].ToString();
+    string answer4 = ViewData["Answer4"].ToString();
+    string answer5 = ViewData["Answer5"].ToString();
+    string answer6 = ViewData["Answer6"].ToString();
+    string answer7 = ViewData["Answer7"].ToString();
+    string answer8 = ViewData["Answer8"].ToString();
+    string answer9 = ViewData["Answer9"].ToString();
+    string answer10 = ViewData["Answer10"].ToString();
+
+    string Answer = null;
+}
+
+<div>
+    <form asp-action="">
+        @if (typeQuestion == 1)
+        {
+            <p>Вопрос с одним вариантом ответа</p>
+            @for (int i = 1; i < 11; i++)
+            {
+                Answer = "Answer" + i.ToString();
+                <label asp-for="RightAnswer">@Answer</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="@Answer">
+            }
+            <input asp-for="RightAnswer" type="radio" value="answer">
+        }
+    </form>
+
+</div>
