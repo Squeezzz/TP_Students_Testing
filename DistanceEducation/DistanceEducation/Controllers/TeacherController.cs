@@ -185,5 +185,61 @@ namespace DistanceEducation.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> CreateQuestion([Bind("RightAnswer")] Question question)
+        {
+            question.Title = Request.Cookies["Title"];
+            question.typeQuestion =Convert.ToInt32( Request.Cookies["typeQuestion"]);
+
+            question.TestId = _context.tests.Where(a => a.TestName == Request.Cookies["TestName"]
+            && a.DateOfStart == Convert.ToDateTime(Request.Cookies["DateOfStart"])
+            ).Sele
+
+            if (Request.Cookies["Answer1"] != null)
+            {
+                question.Answer1 = Request.Cookies["Answer1"];
+            }
+            if (Request.Cookies["Answer2"] != null)
+            {
+                question.Answer2 = Request.Cookies["Answer2"];
+            }
+            if (Request.Cookies["Answer3"] != null)
+            {
+                question.Answer3 = Request.Cookies["Answer3"];
+            }
+            if (Request.Cookies["Answer4"] != null)
+            {
+                question.Answer4 = Request.Cookies["Answer4"];
+            }
+            if (Request.Cookies["Answer5"] != null)
+            {
+                question.Answer5 = Request.Cookies["Answer5"];
+            }
+            if (Request.Cookies["Answer6"] != null)
+            {
+                question.Answer6 = Request.Cookies["Answer6"];
+            }
+            if (Request.Cookies["Answer7"] != null)
+            {
+                question.Answer7 = Request.Cookies["Answer7"];
+            }
+            if (Request.Cookies["Answer8"] != null)
+            {
+                question.Answer8 = Request.Cookies["Answer8"];
+            }
+            if (Request.Cookies["Answer9"] != null)
+            {
+                question.Answer9 = Request.Cookies["Answer9"];
+            }
+            if (Request.Cookies["Answer10"] != null)
+            {
+                question.Answer10 = Request.Cookies["Answer10"];
+            }
+
+            _context.questions.Add(question);
+            await _context.SaveChangesAsync();
+
+            return Redirect("~/Teacher/MakeQuestions");
+        }
     }
 }

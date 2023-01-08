@@ -42,19 +42,6 @@
             {
                 string answer10 = ViewData["Answer10"].ToString();
             }
-
-            //string answer1 = ViewData["Answer1"].ToString() != null ? (String)ViewData["Answer1"] : null;
-            //string answer2 = ViewData["Answer2"].ToString() != null ? (String)ViewData["Answer2"] : null;
-            //string answer3 = ViewData["Answer3"].ToString() != null ? (String)ViewData["Answer3"] : null;
-            //string answer4 = ViewData["Answer4"].ToString() != null ? (String)ViewData["Answer4"] : null;
-            //string answer5 = ViewData["Answer5"].ToString() != null ? (String)ViewData["Answer5"] : null;
-            //string answer6 = ViewData["Answer6"].ToString() != null ? (String)ViewData["Answer6"] : null;
-            //string answer7 = ViewData["Answer7"].ToString() != null ? (String)ViewData["Answer7"] : null;
-            //string answer8 = ViewData["Answer8"].ToString() != null ? (String)ViewData["Answer8"] : null;
-            //string answer9 = ViewData["Answer9"].ToString() != null ? (String)ViewData["Answer9"] : null;
-            //string answer10 = ViewData["Answer10"].ToString() != null ? (String)ViewData["Answer10"] : null;
-
-            string Answer = null;
         }
 
 <div>
@@ -112,7 +99,7 @@
                 <label asp-for="RightAnswer">Вариант ответа 10</label>
                 <input asp-for="RightAnswer" name="answer" type="radio" value="Answer10">
             }
-            
+          <button type="submit">Выбрать</button>  
 @*            
             @for (int i = 1; i < 11; i++)
             {
