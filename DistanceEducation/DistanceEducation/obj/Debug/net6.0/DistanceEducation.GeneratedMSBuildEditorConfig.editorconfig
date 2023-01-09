@@ -28,6 +28,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/Student/ChooseTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDaG9vc2VUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/Student/MainPageStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxNYWluUGFnZVN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/Student/MakeTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxNYWtlVGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/Student/ResultTesting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxSZXN1bHRUZXN0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/Teacher/ChooseDiscipline.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxDaG9vc2VEaXNjaXBsaW5lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
