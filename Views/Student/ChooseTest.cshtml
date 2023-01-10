@@ -1,0 +1,16 @@
+﻿@{
+    List<Student> students = ViewData["Student"] != null ? (List<Student>)ViewData["Student"] : null;
+    List<Test> tests = ViewData["Test"] != null ? (List<Test>)ViewData["Test"] : null;
+}
+
+<div>
+    <h3>Список доступных тестов</h3>
+    @foreach(var item in tests)
+    {
+        <p>@item.TestName</p> <br />
+        <p>Остальные свойства добавить после... </p>
+        <br />
+        <a asp-route-id = "@item.Id" asp-action="MakeTest">Выполнить тест</a>
+        <hr />
+    }
+</div>
