@@ -1,0 +1,91 @@
+﻿@model IEnumerable<DistanceEducation.Models.Teacher>
+
+@{
+    ViewData["Title"] = "Index";
+    List<Group> groups = ViewData["Group"] != null ? (List<Group>)ViewData["Group"] : null;
+    List<Discipline> disciplines = ViewData["Discipline"] != null ? (List<Discipline>)ViewData["Discipline"] : null;
+    List<DisciplineTeacher> disciplineTeachers = ViewData["DisciplineTeacher"] != null ? (List<DisciplineTeacher>)ViewData["DisciplineTeacher"] : null;
+    List<GroupTeacher> groupTeachers = ViewData["GroupTeacher"] != null ? (List<GroupTeacher>)ViewData["GroupTeacher"] : null;
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patronymic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                Groups
+            </th>
+            <th>
+                Disciplines
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patronymic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+
+                    @foreach (var items in groupTeachers)
+                    {
+                        if (items.TeachersId == item.Id)
+                        {
+                            <p>@groups.Where(a=>a.Id==items.GroupsId).Select(a=>a.GroupName).FirstOrDefault().ToString()</p>
+                        }
+                    }
+            </td>
+                <td>
+                    @foreach (var items2 in disciplineTeachers)
+                    {
+                        if (items2.TeacherId == item.Id)
+                        {
+                            <p>@disciplines.Where(a=>a.Id==items2.DisciplineId).Select(a=>a.DisciplineName).FirstOrDefault().ToString()</p>
+                        }
+                    }
+                </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                <a asp-action="AddGroup" asp-route-id="@item.Id">Add Group</a> |
+                <a asp-action="AddDiscipline" asp-route-id="@item.Id">Add Discipline</a> |
+                    <a asp-action="DeleteGroup" asp-route-id="@item.Id">Delete Group</a> |
+                    <a asp-action="DeleteDiscipline" asp-route-id="@item.Id">Delete Discipline</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

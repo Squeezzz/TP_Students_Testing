@@ -1,0 +1,10 @@
+﻿@{
+    int point = Convert.ToInt32(ViewData["YourResult"]);
+    int maxpoint = Convert.ToInt32(ViewData["MaxResult"]);
+}
+
+<div>
+    <h3>Ваш результат</h3>
+    <hr />
+    <p>@point / @maxpoint</p>
+</div>

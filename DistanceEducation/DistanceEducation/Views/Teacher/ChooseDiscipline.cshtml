@@ -1,0 +1,26 @@
+﻿    @model DistanceEducation.Models.Test;
+
+@{
+    List<Discipline> disciplines = ViewData["Discipline"] != null ? (List<Discipline>)ViewData["Discipline"] : null;
+    //List<Test> tests = ViewData["Test"] != null ? (List<Test>)ViewData["Test"] : null;
+}
+
+
+<div>
+    <form asp-action="CreateTest">
+
+        <label asp-for="DisciplineId">Выберите предмет</label>
+        <select asp-for="DisciplineId">
+            <option value="">Выберите предмет</option>
+            @foreach (var item in disciplines)
+            {
+                if (item != null)
+                {
+                    <option value="@item.Id">@item.DisciplineName</option>
+                }
+            }
+        </select>
+
+        <button type="submit">Создать тест</button>
+    </form>
+</div>
