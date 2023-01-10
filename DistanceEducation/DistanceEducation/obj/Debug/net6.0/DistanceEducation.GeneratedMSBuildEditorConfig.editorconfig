@@ -16,6 +16,110 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\varme\OneDrive\Рабочий стол\Курсовая\DistanceEducation\DistanceEducation
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminDisciplines/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EaXNjaXBsaW5lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminDisciplines/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EaXNjaXBsaW5lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminDisciplines/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EaXNjaXBsaW5lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminDisciplines/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EaXNjaXBsaW5lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminDisciplines/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5EaXNjaXBsaW5lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminGroups/AddDiscipline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Hcm91cHNcQWRkRGlzY2lwbGluZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminGroups/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Hcm91cHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminGroups/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Hcm91cHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminGroups/DeleteDiscipline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Hcm91cHNcRGVsZXRlRGlzY2lwbGluZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminGroups/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Hcm91cHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminGroups/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Hcm91cHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminGroups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Hcm91cHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminStudent/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5TdHVkZW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminStudent/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5TdHVkZW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminStudent/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5TdHVkZW50XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminStudent/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5TdHVkZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminStudent/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5TdHVkZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/AddDiscipline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXEFkZERpc2NpcGxpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/AddGroup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXEFkZEdyb3VwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/DeleteDiscipline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXERlbGV0ZURpc2NpcGxpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/DeleteGroup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXERlbGV0ZUdyb3VwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/AdminTeacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5UZWFjaGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/varme/OneDrive/Рабочий стол/Курсовая/DistanceEducation/DistanceEducation/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
