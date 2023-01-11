@@ -1,0 +1,13 @@
+﻿@model DistanceEducation.Models.ForLogin
+
+        <div>
+            <form asp-action="Login">
+            <h1>Вход</h1>
+            <label asp-for="Email"> E-mail:</label>
+            <input asp-for="Email" type="email" placeholder="Введите e-mail">
+            <label asp-for="Password"> Пароль:</label>
+            <input asp-for="Password" type="password" placeholder="Введите пароль">
+            <button>Отправить</button>
+            <a asp-controller="Home" asp-action="Index"> Вернуться на главную страницу </a>
+        </form>
+        </div>

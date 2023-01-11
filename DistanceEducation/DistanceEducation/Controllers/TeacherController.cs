@@ -20,8 +20,9 @@ namespace DistanceEducation.Controllers
 
         public IActionResult MainPageTeacher()
         {
+            //Response.Cookies.Append("userId", 1.ToString());
             //ViewData["Teacher"] = _context.teachers.Where(a => a.Id == Convert.ToInt32(Request.Cookies["userId"])).ToList();
-            ViewData["Teacher"] = _context.teachers.Where(a => a.Id == 1).ToList();
+            ViewData["Teacher"] = _context.teachers.Where(a => a.Id == Convert.ToInt32(Request.Cookies["userId"])).ToList();
             return View();
         }
 
@@ -29,7 +30,7 @@ namespace DistanceEducation.Controllers
         {
             //Получение списка групп у которых преподает данный преподаватель
             List<int> groupId= new List<int>();
-            groupId = _context.groupTeachers.Where(a => a.TeachersId == 1).Select(a=>a.GroupsId).ToList();
+            groupId = _context.groupTeachers.Where(a => a.TeachersId == Convert.ToInt32(Request.Cookies["userId"])).Select(a=>a.GroupsId).ToList();
             List<Models.Group> groups = new List<Models.Group>();
             foreach (var item in groupId)
             {
@@ -198,7 +199,7 @@ namespace DistanceEducation.Controllers
             question.TestId = _context.tests.Where(a => a.TestName == Request.Cookies["TestName"]
             && a.DateOfStart == Convert.ToDateTime(Request.Cookies["DateOfStart"])
             && a.DateOfEnd == Convert.ToDateTime(Request.Cookies["DateOfEnd"])
-            && a.TeacherId == 1
+            && a.TeacherId == Convert.ToInt32(Request.Cookies["userId"])
             && a.DisciplineId == Convert.ToInt32(Request.Cookies["DisciplineId"])
             && a.GroupId == Convert.ToInt32(Request.Cookies["GroupId"]))
                 .Select(a=>a.Id).FirstOrDefault();
@@ -257,5 +258,39 @@ namespace DistanceEducation.Controllers
             return View();
         }
 
+        //Список тестов созданных преподавателем
+        public IActionResult TestList()
+        {
+            ViewData["Tests"] = _context.tests.Where(a => a.TeacherId == Convert.ToInt32(Request.Cookies["userId"])).ToList();
+            ViewData["Group"] = _context.groups.ToList();
+            ViewData["Discipline"] = _context.disciplines.ToList();
+
+            return View();
+        }
+
+
+        public IActionResult LookTest(int Id)
+        {
+            ViewData["Test"] = _context.tests.Where(a => a.Id == Id).ToList();
+            ViewData["Question"] = _context.questions.Where(a => a.TestId == Id).ToList();
+            return View();
+        }
+
+        public async Task<IActionResult> DeleteTest(int Id)
+        {
+            Test test = new Test();
+            test.Id = Id;
+            _context.tests.Remove(test);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(TestList));
+        }
+
+        public IActionResult LookResults(int Id)
+        {
+            ViewData["Students"] = _context.students.Where(a => a.GroupId == _context.tests.Where(a => a.Id == Id).Select(a => a.GroupId).FirstOrDefault()).ToList();
+            ViewData["Results"] = _context.results.Where(a => a.TestId == Id).ToList();
+            ViewData["Question"] = _context.questions.Where(a => a.TestId == Id).Count();
+            return View();
+        }
     }
 }

@@ -15,19 +15,24 @@ namespace DistanceEducation.Controllers
 
         public IActionResult MainPageStudent()
         {
-            Response.Cookies.Append("StudentId", 1.ToString());
-            ViewData["Student"] = _context.students.Where(a => a.Id ==Convert.ToInt32(Request.Cookies["StudentId"])).ToList();
+            //Response.Cookies.Append("userId", 1.ToString());
+            ViewData["Student"] = _context.students.Where(a => a.Id ==Convert.ToInt32(Request.Cookies["userId"])).ToList();
             return View();
         }
 
+        //список доступных тестов
         public IActionResult ChooseTest()
         {
             //изменить на куки
             ViewData["Test"] = _context.tests
                 .Where(a => 
-                a.GroupId == _context.students.Where(a=>a.Id== Convert.ToInt32(Request.Cookies["StudentId"]))
-                .Select(a=>a.GroupId).FirstOrDefault() && a.Id != _context.results.Where(a=>a.StudentId == Convert.ToInt32(Request.Cookies["StudentId"])).Select(a=>a.TestId).FirstOrDefault()
+                a.GroupId == _context.students.Where(a=>a.Id== Convert.ToInt32(Request.Cookies["userId"]))
+                .Select(a=>a.GroupId).FirstOrDefault() 
+                && a.DateOfStart<DateTime.Now && a.DateOfEnd>DateTime.Now
+                //&& a.Id != _context.results.Where(a=>a.StudentId == Convert.ToInt32(Request.Cookies["StudentId"])).Select(a=>a.TestId).FirstOrDefault()
                 ).ToList();
+            ViewData["Discipline"] = _context.disciplines.ToList();
+            ViewData["Result"] = _context.results.Where(a => a.StudentId == Convert.ToInt32(Request.Cookies["userId"])).ToList();
             return View();
         }
 
@@ -59,7 +64,7 @@ namespace DistanceEducation.Controllers
             Result result = new Result();
 
             result.TestId = Convert.ToInt32(Request.Cookies["TestId"]);
-            result.StudentId = Convert.ToInt32(Request.Cookies["StudentId"]);
+            result.StudentId = Convert.ToInt32(Request.Cookies["userId"]);
             result.Itog = points;
             _context.Add(result);
             _context.SaveChanges();
@@ -67,6 +72,22 @@ namespace DistanceEducation.Controllers
             Response.Cookies.Delete("TestId");
             ViewData["YourResult"] = points;
             ViewData["MaxResult"] = maxpoints;
+
+            return View();
+        }
+
+        //
+        public IActionResult AllResults()
+        {
+            ViewData["Test"] = _context.tests.Where(a => a.GroupId == 
+            _context.students.Where(a => a.Id == Convert.ToInt32(Request.Cookies["userId"])).Select(a=>a.GroupId).FirstOrDefault()
+            && a.Id != _context.results.Where(a=>a.StudentId== Convert.ToInt32(Request.Cookies["userId"])).Select(a=>a.TestId).FirstOrDefault()).ToList();
+            ViewData["Result"] = _context.results.Where(a => a.StudentId == Convert.ToInt32(Request.Cookies["userId"])).ToList();
+            //ViewData["Discipline"] = _context.disciplines.Where(a=>a.Id ==
+            //_context.disciplineGroups.Where(a=>a.GroupsId==
+            //_context.students.Where(a=>a.Id ==Convert.ToInt32(Request.Cookies["StudentId"])).Select(a=>a.GroupId).FirstOrDefault()).Select(a=>a.DisciplineId).FirstOrDefault()).ToList();
+            ViewData["Discipline"] = _context.disciplines.ToList();
+            ViewData["Question"] = _context.questions.ToList();
 
             return View();
         }
