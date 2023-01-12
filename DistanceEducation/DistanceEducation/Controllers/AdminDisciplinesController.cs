@@ -22,7 +22,9 @@ namespace DistanceEducation.Controllers
         // GET: AdminDisciplines
         public async Task<IActionResult> Index()
         {
-              return View(await _context.disciplines.ToListAsync());
+            //Данный userIdToIndex будет служить временными данными для дальнейшей возможности перейти с Index обратно на главную страницу Админа
+            TempData["userIdToIndex"] = Convert.ToInt32(Request.Cookies["userId"]);
+            return View(await _context.disciplines.ToListAsync());
         }
 
         // GET: AdminDisciplines/Details/5

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\varme\\OneDrive\\Рабочий стол\\Курсовая\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj": {}
+    "C:\\Users\\-\\source\\repos\\TP_Students_Testing-Teacher_lists\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\varme\\OneDrive\\Рабочий стол\\Курсовая\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj": {
+    "C:\\Users\\-\\source\\repos\\TP_Students_Testing-Teacher_lists\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\varme\\OneDrive\\Рабочий стол\\Курсовая\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj",
+        "projectUniqueName": "C:\\Users\\-\\source\\repos\\TP_Students_Testing-Teacher_lists\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj",
         "projectName": "DistanceEducation",
-        "projectPath": "C:\\Users\\varme\\OneDrive\\Рабочий стол\\Курсовая\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj",
-        "packagesPath": "C:\\Users\\varme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\varme\\OneDrive\\Рабочий стол\\Курсовая\\DistanceEducation\\DistanceEducation\\obj\\",
+        "projectPath": "C:\\Users\\-\\source\\repos\\TP_Students_Testing-Teacher_lists\\DistanceEducation\\DistanceEducation\\DistanceEducation.csproj",
+        "packagesPath": "C:\\Users\\-\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\-\\source\\repos\\TP_Students_Testing-Teacher_lists\\DistanceEducation\\DistanceEducation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\varme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\-\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

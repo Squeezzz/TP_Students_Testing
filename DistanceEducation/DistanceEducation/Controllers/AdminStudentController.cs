@@ -23,6 +23,8 @@ namespace DistanceEducation.Controllers
         public async Task<IActionResult> Index()
         {
             var distanceTestDbContext = _context.students.Include(s => s.group);
+            //Данный userIdToIndex будет служить временными данными для дальнейшей возможности перейти с Index обратно на главную страницу Админа
+            TempData["userIdToIndex"] = Convert.ToInt32(Request.Cookies["userId"]);
             return View(await distanceTestDbContext.ToListAsync());
         }
 

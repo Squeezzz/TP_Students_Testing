@@ -5,6 +5,7 @@
 }
 
 <div>
+    <h1 class="question">Удаление группы</h1><br /><br />
     <form asp-action="DeleteGroup">
         <label asp-for="GroupsId">Выберите группу</label>
         <select asp-for="GroupsId">
@@ -14,6 +15,11 @@
                             <option value="@item.Id">@item.GroupName</option>
             }
         </select>
-        <button type="submit">Удалить</button>
+        <br /> <br />
+        <button type="submit" class="serch-btn btn-otpravit">Удалить</button>
     </form>
+    <br />
+    <div>
+        <a asp-action="Index" class="serch-btn btn-otpravit">Вернуться к списку преподавателей</a>
+    </div>
 </div>

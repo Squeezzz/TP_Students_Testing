@@ -79,9 +79,9 @@ namespace DistanceEducation.Controllers
         //
         public IActionResult AllResults()
         {
-            ViewData["Test"] = _context.tests.Where(a => a.GroupId == 
-            _context.students.Where(a => a.Id == Convert.ToInt32(Request.Cookies["userId"])).Select(a=>a.GroupId).FirstOrDefault()
-            && a.Id != _context.results.Where(a=>a.StudentId== Convert.ToInt32(Request.Cookies["userId"])).Select(a=>a.TestId).FirstOrDefault()).ToList();
+            ViewData["Test"] = _context.tests.Where(a => a.GroupId ==
+            _context.students.Where(a => a.Id == Convert.ToInt32(Request.Cookies["userId"])).Select(a => a.GroupId).FirstOrDefault()).ToList();
+            //&& a.Id != _context.results.Where(a=>a.StudentId== Convert.ToInt32(Request.Cookies["userId"])).Select(a=>a.TestId).FirstOrDefault()).ToList();
             ViewData["Result"] = _context.results.Where(a => a.StudentId == Convert.ToInt32(Request.Cookies["userId"])).ToList();
             //ViewData["Discipline"] = _context.disciplines.Where(a=>a.Id ==
             //_context.disciplineGroups.Where(a=>a.GroupsId==

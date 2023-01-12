@@ -4,9 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1 class="question">Редактировать группу</h1>
 
-<h4>Group</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,19 +13,21 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="GroupName" class="control-label"></label>
+                <label asp-for="GroupName" class="control-label">Название группы</label>
                 <input asp-for="GroupName" class="form-control" />
                 <span asp-validation-for="GroupName" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="serch-btn btn-otpravit" />
             </div>
         </form>
     </div>
 </div>
+<br>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="serch-btn btn-otpravit">Вернуться к списку групп</a>
 </div>
 
 @section Scripts {

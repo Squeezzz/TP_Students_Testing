@@ -3,11 +3,15 @@
 @{
     ViewData["Title"] = "Index";
 }
+@{
+    int id = (int)TempData["userIdToIndex"];
+}
 
-<h1>Index</h1>
+<h1 class="question">Список дисциплин</h1>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="serch-btn btn-otpravit">Добавить дисциплину</a>
 </p>
 <table class="table">
     <thead>
@@ -25,11 +29,17 @@
                 @Html.DisplayFor(modelItem => item.DisciplineName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Детальная информация</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+
+<br />
+<div>
+    <a asp-controller="Admin" asp-action="MainPageAdmin" asp-route-id="@id" class="serch-btn btn-otpravit">Вернуться на главную страницу</a>
+</div>

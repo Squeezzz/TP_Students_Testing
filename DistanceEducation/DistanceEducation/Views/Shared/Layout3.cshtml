@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DistanceEducation</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DistanceEducation.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-line">
+                <div class="nav">
+                <h1 class="layout3">Пожалуйства, введите свои учетные данные</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-style1">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-line">
+            <div class="footer-logo">                    
+                    <div class="footer-inf">
+                        <p>Политика конфидециальности</p>
+                        <p>Все права защищены 2023</p>
+                    </div>
+                </div>
+                <div class="footer-inf">
+                    <p>Телефон: 7 (960) 917 47 61</p>
+                    <p>E-mail: DistanceEducation@mail.ru</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

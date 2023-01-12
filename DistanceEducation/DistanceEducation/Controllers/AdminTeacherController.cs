@@ -44,6 +44,7 @@ namespace DistanceEducation.Controllers
             //ViewData["Discipline"] = disciplines;
             ViewData["Discipline"] = _context.disciplines.ToList();
             ViewData["DisciplineTeacher"] = _context.disciplineTeachers.ToList();
+            TempData["userIdToIndex"] = Convert.ToInt32(Request.Cookies["userId"]);
             return View(await _context.teachers.ToListAsync());
         }
 

@@ -33,6 +33,8 @@ namespace DistanceEducation.Controllers
             //ViewData["Discipline"] = disciplines;
             ViewData["Discipline"] = _context.disciplines.ToList();
             ViewData["DisciplineGroup"] = _context.disciplineGroups.ToList();
+            //Данный userIdToIndex будет служить временными данными для дальнейшей возможности перейти с Index обратно на главную страницу Админа
+            TempData["userIdToIndex"] = Convert.ToInt32(Request.Cookies["userId"]);
 
             return View(await _context.groups.ToListAsync());
         }
