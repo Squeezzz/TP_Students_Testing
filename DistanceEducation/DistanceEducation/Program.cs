@@ -28,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Teacher}/{action=MainPageTeacher}/{id?}");
+    pattern: "{controller=Account}/{action=Login}");
 
 app.Run();
