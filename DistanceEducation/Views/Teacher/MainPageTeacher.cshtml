@@ -1,0 +1,18 @@
+﻿@{
+    List<Teacher> teachers = ViewData["Teacher"] != null ? (List<Teacher>)ViewData["Teacher"] : null;
+}
+
+<div class="row-login">
+    <div class=" container-register container-style">
+    <h1>Личный кабинет учителя</h1>
+    <hr />
+    <h3>Добро пожаловать, @teachers.Select(a=>a.Surname).FirstOrDefault() @teachers.Select(a=>a.Name).FirstOrDefault() @teachers.Select(a=>a.Patronymic).FirstOrDefault()!</h3>
+
+    <hr />
+
+    <div>
+            <a asp-action="MakeTest" class="btn btn-primary btn-otpravit">Создать тест</a> <hr />
+            <a asp-action="TestList" class="btn btn-primary btn-otpravit">Список тестов</a>
+    </div>
+    </div>
+</div>

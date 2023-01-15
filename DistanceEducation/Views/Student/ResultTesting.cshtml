@@ -1,0 +1,12 @@
+﻿@{
+    int point = Convert.ToInt32(ViewData["YourResult"]);
+    int maxpoint = Convert.ToInt32(ViewData["MaxResult"]);
+}
+
+<div>
+    <h1 class="question">Ваш результат</h1>
+    <hr />
+    <p>@point / @maxpoint</p>
+    <hr />
+    <a asp-action="MainPageStudent" class="serch-btn btn-otpravit">Вернуться на главную</a>
+</div>

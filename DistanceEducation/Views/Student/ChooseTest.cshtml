@@ -1,0 +1,24 @@
+﻿@{
+    List<Student> students = ViewData["Student"] != null ? (List<Student>)ViewData["Student"] : null;
+    List<Test> tests = ViewData["Test"] != null ? (List<Test>)ViewData["Test"] : null;
+    List<Discipline> disciplines = ViewData["Discipline"] != null ? (List<Discipline>)ViewData["Discipline"] : null;
+    List<Result> results = ViewData["Result"] != null ? (List<Result>)ViewData["Result"] : null;
+}
+
+<div>
+    <h3 class="question">Список доступных тестов</h3>
+    <hr />
+    @foreach(var item in tests)
+    {
+        if(!results.Where(a=>a.TestId==item.Id).Any()) {
+        <p class="question">@item.TestName</p> <br />
+        <p>Дата начала: @item.DateOfStart</p> <p>Дата окончания: @item.DateOfEnd</p> 
+        <p>Дисциплина: @disciplines.Where(a=>a.Id==item.DisciplineId).Select(a=>a.DisciplineName).FirstOrDefault()</p>
+        <br />
+        <a asp-route-id = "@item.Id" asp-action="MakeTest" class="serch-btn btn-otpravit" >Выполнить тест</a>
+        <hr />
+        }
+        
+    }
+    <a asp-action="MainPageStudent" class="serch-btn btn-otpravit">Вернуться на главную</a>
+</div>

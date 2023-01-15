@@ -1,0 +1,179 @@
+﻿@model DistanceEducation.Models.Question;
+
+@{
+    int typeQuestion = Convert.ToInt32(ViewData["typeQuestion"]);
+    if (ViewData["Answer1"] != null)
+    {
+        string answer1 = ViewData["Answer1"].ToString();
+    }
+    if (ViewData["Answer2"] != null)
+    {
+        string answer2 = ViewData["Answer2"].ToString();
+    }
+    if (ViewData["Answer3"] != null)
+    {
+        string answer3 = ViewData["Answer3"].ToString();
+    }
+    if (ViewData["Answer4"] != null)
+    {
+        string answer4 = ViewData["Answer4"].ToString();
+    }
+        if (ViewData["Answer5"] != null)
+        {
+            string answer5 = ViewData["Answer5"].ToString();
+        }
+            if (ViewData["Answer6"] != null)
+            {
+                string answer6 = ViewData["Answer6"].ToString();
+            }
+            if (ViewData["Answer7"] != null)
+            {
+                string answer7 = ViewData["Answer7"].ToString();
+            }
+            if (ViewData["Answer8"] != null)
+            {
+                string answer8 = ViewData["Answer8"].ToString();
+            }
+            if (ViewData["Answer9"] != null)
+            {
+                string answer9 = ViewData["Answer9"].ToString();
+            }
+            if (ViewData["Answer10"] != null)
+            {
+                string answer10 = ViewData["Answer10"].ToString();
+            }
+        }
+
+<div>
+    <form asp-action="CreateQuestion">
+        @if (typeQuestion == 1)
+        {
+            <h1 class="question">Выберите правильный вариант ответа</h1>
+            <p class="please">Вопрос с одним вариантом ответа</p>
+            if (ViewData["Answer1"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 1</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer1">
+            }
+            if (ViewData["Answer2"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 2</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer2">
+            }
+            if (ViewData["Answer3"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 3</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer3">
+            }<br /><br />
+            if (ViewData["Answer4"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 4</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer4">
+            }
+            if (ViewData["Answer5"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 5</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer5">
+            }
+                if (ViewData["Answer6"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 6</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer6">
+            }
+            <br />
+
+            <br />
+                if (ViewData["Answer7"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 7</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer7">
+            }
+            if (ViewData["Answer8"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 8</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer8">
+            }
+            if (ViewData["Answer9"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 9</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer9">
+            }
+            <br />
+
+            <br />
+            if (ViewData["Answer10"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 10</label>
+                <input asp-for="RightAnswer" name="answer" type="radio" value="Answer10">
+            }
+        } else
+        {
+            <h1 class="question">Выберите правильные варианты ответов</h1>
+            <p class="please">Вопрос с одним или несколькими вариантами ответов</p>
+            if (ViewData["Answer1"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 1</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer1">
+            }
+            if (ViewData["Answer2"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 2</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer2">
+            }
+            if (ViewData["Answer3"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 3</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer3">
+            }
+            <br />
+
+            <br />
+            if (ViewData["Answer4"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 4</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer4">
+            }
+            if (ViewData["Answer5"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 5</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer5">
+            }
+            if (ViewData["Answer6"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 6</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer6">
+            }<br /><br />
+            if (ViewData["Answer7"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 7</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer7">
+            }
+            if (ViewData["Answer8"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 8</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer8">
+            }
+            if (ViewData["Answer9"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 9</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer9">
+            }
+            <br />
+
+            <br />
+            if (ViewData["Answer10"] != null)
+            {
+                <label asp-for="RightAnswer">Вариант ответа 10</label>
+                <input asp-for="RightAnswer" name="answer" type="checkbox" value="Answer10">
+            }
+        }
+        </p>
+        <button type="submit" class="serch-btn btn-otpravit">Выбрать</button>
+
+    </form>
+    <br />
+    <div>
+        <a asp-action="MainPageTeacher" class="serch-btn btn-otpravit">Вернуться на главную</a>
+    </div>
+
+</div>

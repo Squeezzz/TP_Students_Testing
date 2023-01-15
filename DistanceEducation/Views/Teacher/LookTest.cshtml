@@ -1,0 +1,134 @@
+﻿@{
+    List<Test> tests = ViewData["Test"] != null ? (List<Test>)ViewData["Test"] : null;
+    List<Question> questions = ViewData["Question"] != null ? (List<Question>)ViewData["Question"] : null;
+}
+
+<div>
+    <h1>Информация о тесте</h1>
+    <br />
+    <h3>Название: @tests.Select(a=>a.TestName).FirstOrDefault()</h3>
+    <hr />
+    @foreach (var item in questions)
+    {
+        <p class="question">@item.Title</p>
+        <br />
+        if (item.typeQuestion == 1)
+        {
+            if (item.Answer1 != null)
+            {
+                
+                <label>@item.Answer1 |</label> 
+            }
+            if (item.Answer2 != null)
+            {
+                
+                <label>@item.Answer2 |</label>
+            }
+            if (item.Answer3 != null)
+            {
+                
+                <label>@item.Answer3 |</label>
+            }
+            if (item.Answer4 != null)
+            {
+
+                <label>@item.Answer4 |</label>
+            }
+            if (item.Answer5 != null)
+            {
+
+                <label>@item.Answer5 |</label>
+            }
+            if (item.Answer6 != null)
+            {
+
+                <label>@item.Answer6 |</label>
+            }
+            if (item.Answer7 != null)
+            {
+
+                <label>@item.Answer7 |</label>
+            }
+            if (item.Answer8 != null)
+            {
+
+                <label>@item.Answer8 |</label>
+            }
+            if (item.Answer9 != null)
+            {
+
+                <label>@item.Answer9 |</label>
+            }
+            if (item.Answer10 != null)
+            {
+
+                <label>@item.Answer10 |</label>
+            }
+        }
+        else
+        {
+            if (item.Answer1 != null)
+            {
+
+                <label>@item.Answer1 |</label>
+            }
+            if (item.Answer2 != null)
+            {
+
+                <label>@item.Answer2 |</label>
+            }
+            if (item.Answer3 != null)
+            {
+
+                <label>@item.Answer3 |</label>
+            }
+            if (item.Answer4 != null)
+            {
+
+                <label>@item.Answer4 |</label>
+            }
+            if (item.Answer5 != null)
+            {
+
+                <label>@item.Answer5 |</label>
+            }
+            if (item.Answer6 != null)
+            {
+
+                <label>@item.Answer6 |</label>
+            }
+            if (item.Answer7 != null)
+            {
+
+                <label>@item.Answer7 |</label>
+            }
+            if (item.Answer8 != null)
+            {
+
+                <label>@item.Answer8 |</label>
+            }
+            if (item.Answer9 != null)
+            {
+
+                <label>@item.Answer9 |</label>
+            }
+            if (item.Answer10 != null)
+            {
+
+                <label>@item.Answer10 |</label>
+            }
+        }
+        <br />
+        <br />
+        <p>Правильный ответ: @item.RightAnswer</p>
+        <br />
+
+    }
+
+    <hr />
+    <a asp-action="MakeQuestions" class="serch-btn btn-otpravit">Добавить вопрос</a>
+    <hr />
+    <a asp-action="MainPageTeacher" class="serch-btn btn-otpravit">Вернуться на главную</a>
+    <hr />
+    <a asp-action="TestList" class="serch-btn btn-otpravit">Вернуться к списку тестов</a>
+</div>

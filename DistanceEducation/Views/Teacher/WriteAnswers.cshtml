@@ -1,0 +1,45 @@
+﻿@model DistanceEducation.Models.Question;
+
+@{
+    //int typeQuestion = Convert.ToInt32(ViewData["typeQuestion"]);
+    string Answer= null;
+}
+
+<div>
+    <form asp-action="ChooseRightAnswer">
+
+        <h1 class="question">Варианты ответа на вопрос</h1><br />
+        <p class="please">Пожалуйства, введите необходимые варианты ответов, учитывая, что необязательно заполнять все поля.</p>
+        <label asp-for="Answer1">Вариант ответа 1</label>
+        <input asp-for="Answer1" placeholder=""/>
+        <label asp-for="Answer2">Вариант ответа 2</label>
+        <input asp-for="Answer2" placeholder=""/>
+        <label asp-for="Answer3">Вариант ответа 3</label>
+        <input asp-for="Answer3" placeholder=""/>
+        <br /><br />
+        <label asp-for="Answer4">Вариант ответа 4</label>
+        <input asp-for="Answer4" placeholder=""/>
+        <label asp-for="Answer5">Вариант ответа 5</label>
+        <input asp-for="Answer5" placeholder=""/>
+        <label asp-for="Answer6">Вариант ответа 6</label>        
+        <input asp-for="Answer6" placeholder=""/>
+        <br /><br />
+        <label asp-for="Answer7">Вариант ответа 7</label>
+        <input asp-for="Answer7" placeholder=""/>
+        <label asp-for="Answer8">Вариант ответа 8</label>
+        <input asp-for="Answer8" placeholder=""/>
+        <label asp-for="Answer9">Вариант ответа 9</label>
+        <input asp-for="Answer9" placeholder=""/>
+        <br /><br />
+        <label asp-for="Answer10">Вариант ответа 10</label>
+        <input asp-for="Answer10" placeholder=""/>
+
+        </p>
+        <button type="submit" class="serch-btn btn-otpravit">Далее</button>
+    </form>
+
+    <br />
+    <div>
+        <a asp-action="MainPageTeacher" class="serch-btn btn-otpravit">Вернуться на главную</a>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model DistanceEducation.Models.Question;
+
+@{
+
+}
+
+<h1>Добавление вопроса</h1>
+<div>
+    <form asp-action="WriteAnswers">
+        <p><label asp-for="Title">Введите вопрос</label>
+        <input asp-for="Title" class="search-txt" />
+        </p>
+        <p>
+        <label asp-for="typeQuestion">Выберите тип вопроса</label>
+        <select asp-for="typeQuestion" class="search-txt">
+            <option value="">Тип вопроса</option>
+            <option value="1">С одним вариантом ответа</option>
+            <option value="2">С несколькими вариантами ответов</option>
+        </select>
+        </p>
+        <button type="submit" class="serch-btn btn-otpravit">Выбрать</button>
+    </form>
+    <br />
+    <div>
+        <a asp-action="MainPageTeacher" class="serch-btn btn-otpravit">Вернуться на главную</a>
+    </div>
+</div>

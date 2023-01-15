@@ -1,0 +1,18 @@
+﻿@{
+    List<Student> students = ViewData["Student"] != null ? (List<Student>)ViewData["Student"] : null;
+}
+
+<div class="row-login">
+    <div class=" container-register container-style">
+    <h1 class="question">Личный кабинет студента</h1>
+    <hr />
+    <h3 class="please">Добро пожаловать, @students.Select(a=>a.Surname).FirstOrDefault() @students.Select(a=>a.Name).FirstOrDefault() @students.Select(a=>a.Patronymic).FirstOrDefault()!</h3>
+
+    <hr />
+
+    <div>
+        <a asp-action="ChooseTest" class="btn btn-primary btn-otpravit">Список тестов</a>
+        <a asp-action="AllResults" class="btn btn-primary btn-otpravit">Результаты выполненных тестов</a>
+    </div>
+    </div>
+</div>

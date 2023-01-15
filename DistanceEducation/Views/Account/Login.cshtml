@@ -1,0 +1,25 @@
+﻿@model DistanceEducation.Models.ForLogin
+@{
+    Layout = "Layout3";
+}
+
+<div class="row-login">
+    <div class="col-md-4 container-register container-style">
+            <form asp-action="Login">
+            <h1 class="register">Вход</h1>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"> E-mail:</label>
+                <input asp-for="Email" type="email" placeholder="Введите e-mail">
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"> Пароль:</label>
+                <input asp-for="Password" type="password" placeholder="Введите пароль">
+            </div>
+            <p></p>
+            <div class="form-group">
+                <button class="btn btn-primary btn-otpravit">Отправить</button>
+            </div>            
+        </form>
+    </div>
+ </div>

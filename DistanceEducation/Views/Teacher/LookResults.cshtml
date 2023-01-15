@@ -1,0 +1,38 @@
+﻿@{
+    List<Student> students = ViewData["Students"] != null ? (List<Student>)ViewData["Students"] : null;
+    List<Result> results = ViewData["Results"] != null ? (List<Result>)ViewData["Results"] : null;
+    int maxpoint = Convert.ToInt32(ViewData["Question"]);
+}
+
+<div>
+    <h1 class="question">Результаты тестирования</h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Студент
+                </th>
+                <th>
+                    Результат
+                </th>
+            </tr>
+        </thead>
+        @foreach(var item in students)
+        {
+            <tr>
+            <td>
+                @item.Surname @item.Name @item.Patronymic
+            </td>
+            <td>
+                @results.Where(a=>a.StudentId==item.Id).Select(a=>a.Itog).FirstOrDefault() / @maxpoint
+            </td>
+            </tr>
+        }
+    </table>
+
+    <hr />
+    <a asp-action="MainPageTeacher" class="serch-btn btn-otpravit">Вернуться на главную</a>
+    <p></p>
+    <a asp-action="TestList" class="serch-btn btn-otpravit">Вернуться к списку тестов</a>
+</div>

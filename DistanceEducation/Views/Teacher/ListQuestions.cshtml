@@ -1,0 +1,136 @@
+﻿@{
+    List<Test> tests = ViewData["Test"] != null ? (List<Test>)ViewData["Test"] : null;
+    List<Question> questions = ViewData["Question"] != null ? (List<Question>)ViewData["Question"] : null;
+}
+
+<div>
+    <h1 class="question">Информация о тесте</h1>
+    <br />
+    <p class="please">Название: @tests.Select(a=>a.TestName).FirstOrDefault()</p>
+    <hr />
+    @foreach(var item in questions)
+    {
+        <p class="please">Вопрос: @item.Title</p>
+        <p class="please">Варианты ответов:</p>
+        if (item.typeQuestion == 1)
+        {
+            if (item.Answer1 != null)
+            {
+                <input name="answer" type="radio" value="Answer1">
+                <label >@item.Answer1</label>
+            }
+            if (item.Answer2 != null)
+            {
+                    <input name="answer" type="radio" value="Answer2">
+                            <label >@item.Answer2</label>
+            }
+            if (item.Answer3 != null)
+            {
+                    <input name="answer" type="radio" value="Answer3">
+                            <label >@item.Answer3</label>
+            }<br /> <br />
+            if (item.Answer4 != null)
+            {
+                    <input name="answer" type="radio" value="Answer4">
+                            <label >@item.Answer4</label>
+            }
+            if (item.Answer5 != null)
+            {
+                <input name="answer" type="radio" value="Answer5">
+                <label>@item.Answer5</label>
+            }
+            if (item.Answer6 != null)
+            {
+                <input name="answer" type="radio" value="Answer6">
+                <label>@item.Answer6</label>
+            }
+            <br /> <br />
+            if (item.Answer7 != null)
+            {
+                <input name="answer" type="radio" value="Answer7">
+                <label>@item.Answer7</label>
+            }
+            if (item.Answer8 != null)
+            {
+                <input name="answer" type="radio" value="Answer8">
+                <label>@item.Answer8</label>
+            }
+            if (item.Answer9 != null)
+            {
+                <input name="answer" type="radio" value="Answer9">
+                <label>@item.Answer9</label>
+            }
+            <br /> <br />
+            if (item.Answer10 != null)
+            {
+                <input name="answer" type="radio" value="Answer10">
+                <label>@item.Answer10</label>
+            }
+        } else
+        {
+            if (item.Answer1 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer1">
+                <label>@item.Answer1</label>
+            }
+            if (item.Answer2 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer2">
+                <label>@item.Answer2</label>
+            }
+            if (item.Answer3 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer3">
+                <label>@item.Answer3</label>
+            }
+            <br /> <br />
+            if (item.Answer4 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer4">
+                <label>@item.Answer4</label>
+            }
+            if (item.Answer5 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer5">
+                <label>@item.Answer5</label>
+            }
+            if (item.Answer6 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer6">
+                <label>@item.Answer6</label>
+            }
+            <br /> <br />
+            if (item.Answer7 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer7">
+                <label>@item.Answer7</label>
+            }
+            if (item.Answer8 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer8">
+                <label>@item.Answer8</label>
+            }
+            if (item.Answer9 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer9">
+                <label>@item.Answer9</label>
+            }<br /> <br />
+            if (item.Answer10 != null)
+            {
+                <input name="answer" type="checkbox" value="Answer10">
+                <label>@item.Answer10</label>
+            }            
+        }
+        <br />
+        <p>Правильный ответ: @item.RightAnswer</p>
+        <br />
+
+    }
+
+    <hr />
+        <a asp-action="MakeQuestions" class="serch-btn btn-otpravit">Добавить вопрос</a>
+    <p></p>
+    <div>
+        <a asp-action="MainPageTeacher" class="serch-btn btn-otpravit">Завершить создание теста</a>
+    </div>
+</div>
